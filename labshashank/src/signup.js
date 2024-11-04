@@ -4,7 +4,7 @@ function Signup() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });  // Handling form input changes
   };
 
   const handleSignup = async () => {
@@ -14,16 +14,16 @@ function Signup() {
       body: JSON.stringify(formData),
     });
     const result = await response.json();
-    console.log(result.message);
+    console.log(result.message);  // Displaying the result
   };
 
   return (
     <div>
       <h2>Signup</h2>
-      <input name="username" placeholder="Username" onChange={handleChange} />
-      <input name="email" placeholder="Email" onChange={handleChange} />
-      <input name="password" type="password" placeholder="Password" onChange={handleChange} />
-      <button onClick={handleSignup}>Signup</button>
+      <input name="username" placeholder="Username" onChange={handleChange} />  // Capture username
+      <input name="email" placeholder="Email" onChange={handleChange} />  // Capture email
+      <input name="password" type="password" placeholder="Password" onChange={handleChange} />  // Capture password
+      <button onClick={handleSignup}>Signup</button>  // Submit signup
     </div>
   );
 }
